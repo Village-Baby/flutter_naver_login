@@ -18,6 +18,8 @@ A new flutter plugin project.
   s.dependency 'Flutter'
 
   s.dependency 'naveridlogin-sdk-ios', '~> 4.1.0'
+  s.dependency 'Alamofire', '~> 5.2.2'
+  
   s.ios.deployment_target = '11.0'
   s.platform = :ios, '11.0'
 
