@@ -129,12 +129,10 @@ public class SwiftFlutterNaverLoginPlugin:FlutterPluginAppLifeCycleDelegate, Flu
             ] as [String:Any]
         
             SwiftFlutterNaverLoginPlugin.naverResult!(info)
-            return
+            return false;
         }else{
            return NaverThirdPartyLoginConnection.getSharedInstance().application(app, open: url, options: options)
         }
-        
-        return false;
     }
     
     public func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
