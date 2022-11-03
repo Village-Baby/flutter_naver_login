@@ -4,7 +4,7 @@ import NaverThirdPartyLogin
 import Alamofire
 
 public class SwiftFlutterNaverLoginPlugin:FlutterPluginAppLifeCycleDelegate, FlutterPlugin, NaverThirdPartyLoginConnectionDelegate{
-    var naverResult: FlutterResult? = nil
+    static var naverResult: FlutterResult? = nil
     
     var thirdPartyLoginConn:NaverThirdPartyLoginConnection?
     public static func register(with registrar: FlutterPluginRegistrar) {
