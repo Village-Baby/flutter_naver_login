@@ -21,10 +21,10 @@ public class SwiftFlutterNaverLoginPlugin:FlutterPluginAppLifeCycleDelegate, Flu
         thirdPartyLoginConn?.isInAppOauthEnable = true
         thirdPartyLoginConn?.isOnlyPortraitSupportedInIphone()
         
-        thirdPartyLoginConn?.serviceUrlScheme = Bundle.main.object(forInfoDictionaryKey: "kServiceAppUrlScheme") as? String
-        thirdPartyLoginConn?.consumerKey = Bundle.main.object(forInfoDictionaryKey: "kConsumerKey") as? String
-        thirdPartyLoginConn?.consumerSecret = Bundle.main.object(forInfoDictionaryKey: "kConsumerSecret") as? String
-        thirdPartyLoginConn?.appName = Bundle.main.object(forInfoDictionaryKey: "kServiceAppName") as? String
+        thirdPartyLoginConn?.serviceUrlScheme = Bundle.main.object(forInfoDictionaryKey: "naverServiceAppUrlScheme") as? String
+        thirdPartyLoginConn?.consumerKey = Bundle.main.object(forInfoDictionaryKey: "naverConsumerKey") as? String
+        thirdPartyLoginConn?.consumerSecret = Bundle.main.object(forInfoDictionaryKey: "naverConsumerSecret") as? String
+        thirdPartyLoginConn?.appName = Bundle.main.object(forInfoDictionaryKey: "naverServiceAppName") as? String
         thirdPartyLoginConn?.delegate = self;
     }
     
@@ -129,6 +129,7 @@ public class SwiftFlutterNaverLoginPlugin:FlutterPluginAppLifeCycleDelegate, Flu
             ] as [String:Any]
         
             SwiftFlutterNaverLoginPlugin.naverResult!(info)
+            return
         }else{
            return NaverThirdPartyLoginConnection.getSharedInstance().application(app, open: url, options: options)
         }
